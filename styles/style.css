@@ -390,7 +390,6 @@
 
 .close {
   width: 100%;
-  border: none;
   padding-block: 9.4px;
   border: 2px solid var(--text-color);
   text-transform: uppercase;
