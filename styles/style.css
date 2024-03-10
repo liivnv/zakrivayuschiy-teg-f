@@ -41,16 +41,17 @@
   inline-size: 100%;
 }
 
-.header__title {
+.header__logo {
   margin-block-end: 20px;
   color: currentColor;
   font-family: var(--accent-font), sans-serif;
   font-weight: var(--font-weight-header-text);
   font-size: clamp(3.063rem, 1.909rem + 4.923vw, 4.063rem);
   line-height: 1;
+  text-transform: uppercase;
 }
 
-.header__subtitle {
+.header__title {
   color: currentColor;
   font-family: var(--accent-font), sans-serif;
   font-weight: var(--font-weight-header-text);
@@ -84,21 +85,23 @@
   line-height: inherit;
   text-transform: uppercase;
   background-color: transparent;
+  transition: opacity 0.3s ease;
   cursor: pointer;
 }
 
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
+  top: 0;
+  left: 0;
   animation: shift 0.5s ease-in-out infinite alternate;
-  /*left: -20px;*/
 }
 
 .theme-menu__button::after {
   content: "";
   display: block;
   width: 0%;
-  height: 3px;
+  height: 2px;
   margin-top: 3px;
   background-color: var(--text-color);
   transition: width 0.3s ease;
@@ -107,7 +110,6 @@
 .theme-menu__button:hover,
 .theme-menu__button:disabled {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:disabled {
@@ -117,13 +119,19 @@
 .theme-menu__button:focus {
   outline: none;
   opacity: 0.6;
-  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:focus-visible::after {
   width: 100%;
 }
+
 .main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.main__cards-zone {
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -178,6 +186,7 @@
 .main__card-image {
   width: 100%;
   object-fit: cover;
+  object-position: center;
   aspect-ratio: 1/1;
 }
 
@@ -236,6 +245,7 @@
   border: 2px solid transparent;
   padding: 0;
   background-color: transparent;
+  transition: border 0.3s ease;
   cursor: pointer;
 }
 
@@ -245,7 +255,6 @@
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--text-color);
-  transition: border 0.3s ease;
 }
 
 .like-icon {
@@ -267,6 +276,7 @@
 .button-coloring-animation {
   position: relative;
   overflow: hidden;
+  transition: box-shadow 0.3s ease;
 }
 
 .button-coloring-animation::after {
@@ -291,7 +301,6 @@
 
 .button-coloring-animation:focus-visible {
   box-shadow: 2px 2px 0 0 var(--text-color);
-  transition: box-shadow 0.3s ease;
 }
 
 .button__text {
@@ -310,15 +319,14 @@
   text-transform: uppercase;
 }
 
-.footer {
+.main__save-button-zone {
   display: flex;
   justify-content: center;
-  margin-block-start: 50px;
   padding-inline: clamp(2.125rem, -8.404rem + 44.923vw, 11.25rem);
   inline-size: 100%;
 }
 
-.footer__save-button {
+.main__save-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -326,11 +334,11 @@
   border: 2px solid var(--text-color);
   padding: 15px;
   background-color: var(--background-color);
-  inline-size: 100%;
   cursor: pointer;
+  inline-size: 100%;
 }
 
-.footer__save-button-icon {
+.main__save-button-icon {
   position: relative;
   z-index: 1;
   width: 21px;
@@ -349,10 +357,11 @@
 }
 
 .dialog__window {
-  border: 2px solid var(--text-color);
+  border: none;
   padding: 30px;
+  padding-block-end: 29px;
+  outline: 2px solid var(--text-color);
   background-color: var(--background-color);
-  min-block-size: 191px;
   max-inline-size: 353px;
 }
 
@@ -361,7 +370,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin-block-end: 30px;
+  margin-block-end: 28px;
 }
 
 .dialog__container-for-svg {
@@ -369,7 +378,7 @@
   height: 39px;
 }
 
-.dialog__container-for-svg .footer__save-button-icon {
+.dialog__container-for-svg .main__save-button-icon {
   width: 39px;
   height: 39px;
 }
@@ -383,7 +392,7 @@
   width: 100%;
   border: none;
   padding-block: 9.4px;
-  outline: 2px solid var(--text-color);
+  border: 2px solid var(--text-color);
   text-transform: uppercase;
   background-color: inherit;
   cursor: pointer;
@@ -394,18 +403,17 @@ dialog::backdrop {
 }
 
 @media (width < 665px) {
-  .footer__save-button {
+  .main__save-button {
     flex-direction: column;
   }
 
-
-  .footer__save-button-icon {
+  .main__save-button-icon {
     width: 28px;
     height: 28px;
   }
 
   .dialog__window {
-    padding-inline: 42px;
+    padding-inline: 40px;
     max-inline-size: 341px;
   }
 }
