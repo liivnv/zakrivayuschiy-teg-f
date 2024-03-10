@@ -1,1 +1,18 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-font: "Intel-Variable";
+  --accent-font: "PressStart2P";
+  --font-weight-header-text: 400;
+  --font-weight-text-card: 400;
+  --font-weight-title-card: 700;
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --text-button-color: #ffffff;
+  --text-offset: #ffffff;
+  --heart-contour: #000000;
+  --heart-sparks: #ff0000;
+  --heart-main-body: #ff0000;
+  --background-gradient-line-toright: repeating-linear-gradient(to right, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px);
+  --background-gradient-line-tobottom: repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px);
+  --background-gradient: linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+}

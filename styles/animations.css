@@ -12,3 +12,89 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+.like-icon .core {
+  fill: var(--background-color);
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon:hover .core {
+  fill: var(--heart-contour);
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon .main-body {
+  fill: var(--background-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--heart-contour);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--heart-main-body);
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-main-body);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-main-body);
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-main-body);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-main-body);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center center;
+  animation: scale 0.3s ease-in alternate 0.1s 1;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in alternate 0.3s 1;
+}
+
+.like-icon .contour {
+  fill: var(--heart-contour);
+  transition: fill 0.1s linear;
+}
+
+@keyframes shift {
+  0% {
+    left: -24px;
+  }
+  100% {
+    left: -20px;
+  }
+}
+
+@keyframes scale {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 1.5;
+  }
+}
+
+@keyframes sparks {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
